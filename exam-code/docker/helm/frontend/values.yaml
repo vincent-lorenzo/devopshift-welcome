@@ -1,0 +1,13 @@
+replicaCount: 2
+
+image:
+  repository: docker-web
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 5002
+
+backend:
+  url: http://backend:5001/fetch_price
